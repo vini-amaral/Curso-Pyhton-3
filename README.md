@@ -7,6 +7,12 @@ Necessário instalar o pacote *unidecode* para o jogo da Forca
 pip install unidecode
 ```
 
+Comando para listar os componentes que estão instalados:
+
+```
+pip list
+```
+
 Lista dos pacotes que estão instalados atualmente:
 
 | Package    | Version |
