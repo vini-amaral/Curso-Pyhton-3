@@ -3,9 +3,9 @@ Repositório para os arquivos dos cursos de Pyhton 3 que estou fazendo
 
 
 Necessário instalar o pacote *unidecode* para o jogo da Forca
-´´´
+```
 pip install unidecode
-´´´
+```
 
 Lista dos pacotes que estão instalados atualmente:
 
