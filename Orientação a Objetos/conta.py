@@ -18,23 +18,16 @@ class Conta:
             print("Valor inválido para depósito")
 
     def sacar(self, valor):
-        print("Você está tentando sacar {}".format(valor))
-
-        if (self.__saldo >= valor):
+        if (self.pode_sacar(valor)):
             self.__saldo -= valor
             print("Valor {} sacado com sucesso!".format(valor))
-        elif (self.__saldo + self.__limite >= valor):
-            print(
-                "O valor em conta é insuficiente para realizar o saque. Deseja utilizar o limite?")
-            usar_limite = int(input("Digite (1) para SIM e (2) para NÃO: "))
-            print(usar_limite)
-            if (usar_limite == 1):
-                self.__limite -= (valor - self.__saldo)
-                self.__saldo = 0
-                print("Valor {} sacado com sucesso!".format(valor))
         else:
             print(
-                "O valor desejado é maior que o saldo em conta e o limite disponível.\nSaque não realizado.")
+                "Saque não realizado, pois o valor desejado é maior que o saldo em conta e o limite disponível.")
+
+    def pode_sacar(self, valor_para_sacar):
+        valor_disponivel_para_sacar = self.__saldo + self.__limite
+        return valor_para_sacar <= valor_disponivel_para_sacar
 
     def transferir(self, valor, destino):
         self.sacar(valor)

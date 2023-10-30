@@ -1,10 +1,11 @@
 from conta import Conta
 
-conta1 = Conta(123, "Ana", 60.0, 500.0)
-conta2 = Conta(456, "Bia", 30.0, 500.0)
+conta1 = Conta(123, "Ana", 50.0, 500.0)
 
+conta1.sacar(50)
 
-print(conta1.limite)
-conta1.limite = 900.0
+conta1.sacar(350)
 
-print(conta1.limite)
+conta1.sacar(150)
+
+conta1.sacar(500)
