@@ -18,14 +18,14 @@ class Conta:
             print("Valor inválido para depósito")
 
     def sacar(self, valor):
-        if (self.pode_sacar(valor)):
+        if (self.__pode_sacar(valor)):
             self.__saldo -= valor
             print("Valor {} sacado com sucesso!".format(valor))
         else:
             print(
                 "Saque não realizado, pois o valor desejado é maior que o saldo em conta e o limite disponível.")
 
-    def pode_sacar(self, valor_para_sacar):
+    def __pode_sacar(self, valor_para_sacar):
         valor_disponivel_para_sacar = self.__saldo + self.__limite
         return valor_para_sacar <= valor_disponivel_para_sacar
 
