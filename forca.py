@@ -7,7 +7,7 @@ def jogar():
 
     palavra_secreta = carrega_palavra_secreta()
     letras_acertadas = inicializa_letras_acertadas(palavra_secreta)
-    print(letras_acertadas)
+    imprimir_letras_acertadas(letras_acertadas)
 
     enforcou = False
     acertou = False
@@ -26,7 +26,8 @@ def jogar():
 
         enforcou = erros == 7
         acertou = "_" not in letras_acertadas
-        print(letras_acertadas)
+
+        imprimir_letras_acertadas(letras_acertadas)
 
     if (acertou):
         imprimir_mensagem_vitoria(palavra_secreta)
@@ -34,6 +35,13 @@ def jogar():
         imprimir_mensagem_derrota(palavra_secreta)
 
     print("Fim do Jogo")
+
+
+def imprimir_letras_acertadas(letras_acertadas):
+    str_letras_acertadas = ""
+    for letra in letras_acertadas:
+        str_letras_acertadas = str_letras_acertadas + letra + " "
+    print("\n" + str_letras_acertadas.strip() + "\n")
 
 
 def imprimir_mensagem_derrota(palavra_secreta):
